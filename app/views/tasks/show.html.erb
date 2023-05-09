@@ -1,0 +1,10 @@
+
+<h1> Welcome to Tasks</h1>
+
+<h1><%= @task.title %></h1>
+
+<p><strong>Details:</strong> <%= @task.details %></p>
+<p><strong>Completed:</strong> <%= @task.completed ? 'Yes' : 'No' %></p>
+
+<%= link_to 'Back', tasks_path, class: 'btn btn-secondary' %>
+<%= link_to 'Edit', edit_task_path(@task),
