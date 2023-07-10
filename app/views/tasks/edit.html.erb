@@ -26,18 +26,18 @@
 </head>
 <body>
   <div class="container">
-    <h1>New Task</h1>
+    <h1>Edit Task</h1>
 
     <div class="card">
-      <%= form_with(model: @task, url: tasks_path) do |form| %>
+      <%= form_with(model: @task, url: task_path(@task), method: :patch) do |form| %>
         <% if @task.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
             <ul>
-            <% @task.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
+              <% @task.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
             </ul>
           </div>
         <% end %>
